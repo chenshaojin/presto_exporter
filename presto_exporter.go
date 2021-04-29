@@ -111,7 +111,7 @@ func main() {
 		metricsPath   = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 		opts          = Exporter{}
 	)
-	kingpin.Flag("web.url", "Presto cluster address.").Default("http://localhost:8080/v1/cluster").StringVar(&opts.uri)
+	kingpin.Flag("web.url", "Presto cluster address.").Default("http://localhost:8080/ui/api/stats").StringVar(&opts.uri)
 
 	log.AddFlags(kingpin.CommandLine)
 	kingpin.Version(version.Print("presto_exporter"))
